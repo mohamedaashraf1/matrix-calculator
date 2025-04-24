@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="icon/3815182.png" />
+    <title>Matrix Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Matrix Calculator</h2>
+
+      <label for="size">Matrix A Size</label>
+      <input type="number" id="rows1" placeholder="Rows" min="1" max="4" />
+      <input type="number" id="cols1" placeholder="Columns" min="1" max="4" />
+      <button onclick="createMatrix('matrix1-container', 'rows1', 'cols1')">
+        Create Matrix A
+      </button>
+
+      <div id="matrix1-container"></div>
+
+      <label for="size">Matrix B Size</label>
+      <input type="number" id="rows2" placeholder="Rows" min="1" max="4" />
+      <input type="number" id="cols2" placeholder="Columns" min="1" max="4" />
+      <button onclick="createMatrix('matrix2-container', 'rows2', 'cols2')">
+        Create Matrix B
+      </button>
+
+      <div id="matrix2-container"></div>
+
+      <h3>Operations</h3>
+      <button data-operation="add">Add</button>
+      <button data-operation="subtract">Subtract</button>
+      <button data-operation="multiply">Multiply</button>
+      <button data-operation="transpose">Transpose</button>
+      <button data-operation="inverse">Inverse</button>
+      <h3>Result</h3>
+      <div id="result"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+  <footer>
+    <p class="copyright">&copy; ElMazaly. All rights reserved.</p>
+  </footer>
+</html>
