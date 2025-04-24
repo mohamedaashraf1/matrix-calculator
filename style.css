@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;600&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;600&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
     box-sizing: border-box;
@@ -14,6 +13,9 @@ input[type="number"]::-webkit-inner-spin-button {
     margin: 0;
 }
 
+input[type="number"] {
+    -moz-appearance: textfield;
+}
 
 body {
     font-family: 'Orbitron', sans-serif;
@@ -22,11 +24,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
-    overflow: hidden;
+    overflow-y: auto;
+    padding: 20px;
+    padding-bottom: 50px;
 }
-
 
 .container {
     background: rgba(255, 255, 255, 0.08);
@@ -38,6 +41,7 @@ body {
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     text-align: center;
+    margin-bottom: 40px;
 }
 
 h2 {
@@ -46,7 +50,6 @@ h2 {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-
 
 input {
     width: 90px;
@@ -76,7 +79,6 @@ input:focus {
     outline: none;
 }
 
-
 input::placeholder {
     color: rgba(200, 200, 200, 0.6);
     font-style: italic;
@@ -86,7 +88,6 @@ input::placeholder {
 input:focus::placeholder {
     color: rgb(48, 188, 231);
 }
-
 
 button {
     background: linear-gradient(135deg, #007bff, #00c1ff);
@@ -102,7 +103,6 @@ button {
     box-shadow: 0 2px 6px rgba(0, 255, 255, 0.2); 
     position: relative;
     overflow: hidden;
-
 }
 
 button:hover {
@@ -116,14 +116,12 @@ button:active {
     box-shadow: 0 1px 4px rgba(0, 255, 255, 0.2);
 }
 
-
 .operations {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 12px;
     margin-top: 20px;
 }
-
 
 #result {
     font-size: 18px;
@@ -132,6 +130,7 @@ button:active {
     padding: 15px;
     border-radius: 10px;
     margin-top: 20px;
+    margin-bottom: 20px;
     box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
     opacity: 0;
     transform: scale(0.8);
@@ -143,7 +142,6 @@ button:active {
     transform: scale(1);
     background: rgba(255, 255, 255, 0.3);
 }
-
 
 table {
     margin: auto;
@@ -158,6 +156,7 @@ td {
     font-size: 16px;
     color: white;
 }
+
 .copyright {
     position: fixed;
     bottom: 0;
@@ -167,6 +166,100 @@ td {
     font-size: 15px;
     color: gray;
     padding: 10px 0;
-  
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        width: 95%;
+    }
+
+    .operations {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    input {
+        width: 80px;
+    }
+
+    input[type="number"] {
+        width: 80px;
+        min-width: 70px;
+    }
+
+    button {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    .copyright {
+        font-size: 14px;
+        padding: 8px 0;
+    }
+    
+
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .operations {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    input {
+        width: 70px;
+    }
+
+    input[type="number"] {
+        width: 70px;
+        min-width: 60px;
+    }
+
+    button {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+
+    #result {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .copyright {
+        font-size: 12px;
+        padding: 6px 0;
+    }
+    
+
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
 
