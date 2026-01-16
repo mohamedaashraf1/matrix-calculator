@@ -102,7 +102,6 @@ It serves as both an educational tool and a functional calculator for matrix-bas
 - Row-reduction and RREF operations
 - Support for larger matrices
 - Export results (PDF / CSV)
-- Dark mode UI
 - Mobile optimization
 
 ---
